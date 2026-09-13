@@ -1,0 +1,129 @@
+Step 1 : Load Dataset
+========================================
+Loading Dataset...
+========================================
+Dataset Loaded Successfully
+========================================
+
+Step 2 : Dataset Information
+========================================
+Dataset Shape :  (1000, 11)
+
+Column Names :
+Index(['Age', 'MonthlyIncome', 'YearsAtCompany', 'TotalWorkingYears',
+       'DistanceFromHome', 'JobSatisfaction', 'WorkLifeBalance', 'OverTime',
+       'NumCompaniesWorked', 'TrainingTimesLastYear', 'Attrition'],
+      dtype='str')
+
+First Five Records :
+   Age  MonthlyIncome  ...  TrainingTimesLastYear  Attrition
+0   24          52421  ...                      0         No
+1   51         173064  ...                      3         No
+2   47         133296  ...                      1         No
+3   38         100482  ...                      5         No
+4   38          28122  ...                      1         No
+
+[5 rows x 11 columns]
+
+Step 3 : Missing Values
+========================================
+
+Missing Values :
+Age                      0
+MonthlyIncome            0
+YearsAtCompany           0
+TotalWorkingYears        0
+DistanceFromHome         0
+JobSatisfaction          0
+WorkLifeBalance          0
+OverTime                 0
+NumCompaniesWorked       0
+TrainingTimesLastYear    0
+Attrition                0
+dtype: int64
+
+Step 4 : Data Preprocessing
+========================================
+
+Preprocessing Dataset...
+========================================
+Categorical Data Converted Successfully
+
+Step 5 : Separate Input and Output
+========================================
+Input Shape  :  (1000, 10)
+Output Shape :  (1000,)
+
+Step 6 : Train Test Split
+========================================
+
+Training Data Shape :  (800, 10)
+Testing Data Shape  :  (200, 10)
+
+Step 7 : Feature Scaling
+========================================
+Feature Scaling Completed
+
+Step 8 : Create MLP Model
+========================================
+MLPClassifier(hidden_layer_sizes=(16, 8), max_iter=500, random_state=42)
+
+Step 9 : Train Model
+========================================
+
+Training MLP Neural Network...
+========================================
+Training Completed
+
+Step 10 : Number of Iterations
+========================================
+
+Number of Iterations :  500
+
+Step 11 : Training Accuracy
+========================================
+
+Training Accuracy : 85.75%
+
+Step 12 : Testing Accuracy
+========================================
+Testing Accuracy : 78.00%
+
+Classification Report :
+              precision    recall  f1-score   support
+
+        Stay       0.84      0.89      0.87       158
+       Leave       0.47      0.36      0.41        42
+
+    accuracy                           0.78       200
+   macro avg       0.65      0.62      0.64       200
+weighted avg       0.76      0.78      0.77       200
+
+
+Step 13 : Confusion Matrix
+========================================
+
+Confusion Matrix :
+[[141  17]
+ [ 27  15]]
+
+Step 14 : Loss Curve
+========================================
+
+Step 15 : Predict New Employees
+========================================
+Employee 1 : Stay
+Leave Probability : 4.12%
+----------------------------------------
+Employee 2 : Stay
+Leave Probability : 0.47%
+----------------------------------------
+Employee 3 : Stay
+Leave Probability : 19.77%
+----------------------------------------
+Employee 4 : Stay
+Leave Probability : 0.04%
+----------------------------------------
+Employee 5 : Stay
+Leave Probability : 4.73%
+----------------------------------------
