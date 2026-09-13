@@ -1,0 +1,237 @@
+
+Step 1 : Load Dataset
+========================================
+Loading Dataset...
+========================================
+Dataset Loaded Successfully
+
+Step 2 : Understand Dataset
+========================================
+
+Dataset Shape :  (1200, 11)
+
+Column Names :
+['Age', 'Income', 'LoanAmount', 'CreditScore', 'EmploymentYears', 'ExistingLoans', 'MonthlyDebt', 'LoanTerm', 'PreviousDefault', 'HomeOwnership', 'Default']
+
+First Five Records :
+   Age  Income  LoanAmount  ...  PreviousDefault  HomeOwnership  Default
+0   37  723624      530894  ...               No            Own        0
+1   53  448448      266461  ...               No            Own        1
+2   38  931575      338951  ...              Yes           Rent        1
+3   21  499242     1037094  ...               No           Rent        0
+4   63  150000      743351  ...               No           Rent        0
+
+[5 rows x 11 columns]
+
+Dataset Information :
+<class 'pandas.DataFrame'>
+RangeIndex: 1200 entries, 0 to 1199
+Data columns (total 11 columns):
+ #   Column           Non-Null Count  Dtype
+---  ------           --------------  -----
+ 0   Age              1200 non-null   int64
+ 1   Income           1200 non-null   int64
+ 2   LoanAmount       1200 non-null   int64
+ 3   CreditScore      1200 non-null   int64
+ 4   EmploymentYears  1200 non-null   int64
+ 5   ExistingLoans    1200 non-null   int64
+ 6   MonthlyDebt      1200 non-null   int64
+ 7   LoanTerm         1200 non-null   int64
+ 8   PreviousDefault  1200 non-null   str  
+ 9   HomeOwnership    1200 non-null   str  
+ 10  Default          1200 non-null   int64
+dtypes: int64(9), str(2)
+memory usage: 103.3 KB
+None
+
+Step 3 : Exploratory Data Analysis
+========================================
+
+Statistical Information :
+                Age        Income  ...  HomeOwnership     Default
+count   1200.000000  1.200000e+03  ...           1200  1200.00000
+unique          NaN           NaN  ...              3         NaN
+top             NaN           NaN  ...           Rent         NaN
+freq            NaN           NaN  ...            544         NaN
+mean      43.422500  7.141947e+05  ...            NaN     0.26750
+std       12.815454  3.373294e+05  ...            NaN     0.44284
+min       21.000000  1.500000e+05  ...            NaN     0.00000
+25%       33.000000  4.659355e+05  ...            NaN     0.00000
+50%       44.000000  6.961435e+05  ...            NaN     0.00000
+75%       54.000000  9.371435e+05  ...            NaN     1.00000
+max       65.000000  1.823035e+06  ...            NaN     1.00000
+
+[11 rows x 11 columns]
+
+Unique Values :
+Age  :  [37 53 38 21 63 65 48 22 45 34 31 41 28 47 55 32 24 35 49 60 23 59 62 36
+ 43 29 33 61 39 52 25 42 58 57 64 46 26 51 40 44 30 54 50 56 27]
+Income  :  [723624 448448 931575 ... 648953 427117 350526]
+LoanAmount  :  [530894 266461 338951 ... 636372 368311 805256]
+CreditScore  :  [750 576 665 643 657 552 529 589 687 683 534 590 681 634 797 620 764 789
+ 770 746 465 850 598 831 771 653 677 714 559 605 690 844 560 654 729 555
+ 612 673 638 646 693 786 655 743 603 748 691 509 587 561 747 671 696 511
+ 682 787 613 506 774 719 652 739 736 779 777 701 631 712 434 615 563 618
+ 669 700 610 731 599 662 619 551 627 616 694 606 611 624 744 569 758 699
+ 842 717 658 767 591 784 630 524 564 541 761 803 702 810 649 772 716 684
+ 790 802 704 659 688 741 749 641 706 710 574 661 609 676 765 728 409 556
+ 721 732 680 778 519 769 672 685 742 538 847 837 726 617 546 689 650 705
+ 542 697 505 570 711 533 670 804 608 791 819 782 656 520 636 571 830 738
+ 794 600 648 846 775 582 523 640 796 679 773 692 751 707 822 667 718 709
+ 510 835 756 498 805 584 734 745 763 629 724 621 703 695 595 573 733 754
+ 592 759 554 808 539 588 566 581 601 577 586 450 664 713 740 622 632 585
+ 614 730 468 686 806 580 666 663 499 575 557 604 642 518 553 647 572 645
+ 568 521 628 813 798 766 660 780 753 843 783 800 752 698 626 674 593 723
+ 820 722 817 639 493 513 715 494 727 635 651 827 507 826 401 823 757 637
+ 668 504 818 550 825 453 678 408 483 633 834 792 578 544 735 795 535 816
+ 594 781 815 446 607 838 530 482 625 725 528 502 537 497 807 525 833 788
+ 545 602 809 708 536 481 479 675 565 821 548 485 567 484 514 793 824 440
+ 760 799 457 623 762 596 515 455 811 495 848 644 496 776 475 737 597 720
+ 839 755 501 458]
+EmploymentYears  :  [ 0 27 20  3 14  6 28  2  4  1 16 10 18  7 12 22  9  5 17 11 15 25 13 30
+ 19 21 23  8 29 24 26]
+ExistingLoans  :  [4 2 0 3 1 5]
+MonthlyDebt  :  [12255 39273 20805 ... 28643 18756 25454]
+LoanTerm  :  [12 48 36 84 60 24]
+PreviousDefault  :  <StringArray>
+['No', 'Yes']
+Length: 2, dtype: str
+HomeOwnership  :  <StringArray>
+['Own', 'Rent', 'Mortgage']
+Length: 3, dtype: str
+Default  :  [0 1]
+
+Step 4 : Missing Values
+========================================
+
+Missing Values :
+Age                0
+Income             0
+LoanAmount         0
+CreditScore        0
+EmploymentYears    0
+ExistingLoans      0
+MonthlyDebt        0
+LoanTerm           0
+PreviousDefault    0
+HomeOwnership      0
+Default            0
+dtype: int64
+
+Step 5 : Target Class Balance
+========================================
+
+Target Class Distribution :
+Default
+0    879
+1    321
+Name: count, dtype: int64
+
+Target Class Percentage :
+Default
+0    73.25
+1    26.75
+Name: proportion, dtype: float64
+
+Step 6 : Encode Categorical Variables
+========================================
+
+Preprocessing Dataset...
+========================================
+
+After Encoding :
+   Age  Income  ...  HomeOwnership_Own  HomeOwnership_Rent
+0   37  723624  ...                  1                   0
+1   53  448448  ...                  1                   0
+2   38  931575  ...                  0                   1
+3   21  499242  ...                  0                   1
+4   63  150000  ...                  0                   1
+
+[5 rows x 13 columns]
+
+Step 7 : Separate X and y
+========================================
+
+Input Shape  :  (1200, 12)
+Output Shape :  (1200,)
+
+Step 8 : Train Test Split
+========================================
+
+Training Data :  (960, 12)
+Testing Data  :  (240, 12)
+
+Step 9 : Feature Scaling
+========================================
+
+Feature Scaling Completed
+
+Step 10 : Create MLPClassifier
+========================================
+MLPClassifier(hidden_layer_sizes=(32, 16), max_iter=1000, random_state=42)
+
+Step 11 : Train Model
+========================================
+
+Training Model...
+========================================
+Training Completed
+
+Step 12-15 : Model Evaluation
+========================================
+
+Training Accuracy : 98.85%
+Testing Accuracy  : 72.92%
+Precision          : 0.49
+Recall             : 0.42
+F1-Score           : 0.45
+
+Number of Iterations :  1000
+
+Step 13 : Confusion Matrix
+========================================
+
+Confusion Matrix :
+[[148  28]
+ [ 37  27]]
+
+Step 14 : Classification Report
+========================================
+
+Classification Report :
+              precision    recall  f1-score   support
+
+    Low Risk       0.80      0.84      0.82       176
+   High Risk       0.49      0.42      0.45        64
+
+    accuracy                           0.73       240
+   macro avg       0.65      0.63      0.64       240
+weighted avg       0.72      0.73      0.72       240
+
+
+Step 16 : Training Loss
+========================================
+
+Step 17 : Test New Loan Applicants
+========================================
+Model Features :  ['Age', 'Income', 'LoanAmount', 'CreditScore', 'EmploymentYears', 'ExistingLoans', 'MonthlyDebt', 'LoanTerm', 'PreviousDefault', 'HomeOwnership_Mortgage', 'HomeOwnership_Own', 'HomeOwnership_Rent']
+
+Activation Function Experiment
+========================================
+identity : 77.92%
+logistic : 78.33%
+tanh : 72.50%
+relu : 72.92%
+
+Hidden Layer Experiment
+========================================
+(10,) : 77.92%
+(20, 10) : 72.08%
+(50, 25) : 75.00%
+(100, 50, 25) : 75.42%
+
+Learning Rate Experiment
+========================================
+0.0001 : 77.50%
+0.001 : 72.92%
+0.01 : 75.00%
